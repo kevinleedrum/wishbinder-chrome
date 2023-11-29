@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wishlist Popup</title>
+    <link rel="stylesheet" type="text/css" href="src/popup.css" />
+  </head>
+  <body>
+    <form id="settingsForm">
+      <h1>wishbinder</h1>
+      <small>&copy; 2023 Kevin Lee Drum</small>
+      <p>Enter your wishbinder server's URL below to get started.</p>
+      <label for="serverUrl">Server URL</label>
+      <input type="text" name="serverUrl" />
+      <button type="submit">Save</button>
+    </form>
+
+    <form id="wishForm">
+      <h1>Add wish</h1>
+      <div id="popupButtons">
+        <button type="button" id="refreshButton" title="Refresh">
+          &#x21bb;
+        </button>
+        <button type="button" id="settingsButton" title="Settings">
+          &#x2699;
+        </button>
+      </div>
+      <div id="imageSelection"></div>
+      <label for="description">Description</label>
+      <input type="text" name="description" />
+      <label for="price">Price</label>
+      <input type="text" name="price" />
+      <input type="hidden" name="url" />
+      <button type="submit">Add to wishlist</button>
+    </form>
+
+    <div id="loading"><span>&#x21bb;</span></div>
+
+    <script type="module" src="/src/popup.ts"></script>
+  </body>
+</html>

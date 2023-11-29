@@ -1,0 +1,136 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 300px;
+  color: #1f2937;
+}
+
+form {
+  display: grid;
+  place-content: start;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+  padding: 1rem;
+}
+
+form#settingsForm {
+  display: none;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+#loading {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  font-size: 3rem;
+  z-index: 1;
+  place-content: center;
+}
+
+#loading span {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+label {
+  color: #4b5563;
+  font-weight: 500;
+}
+
+input[type="text"], input[type="number"], button {
+  background-color: rgb(229 231 235);
+  border-radius: 1.5rem;
+  padding: 0.75rem 1rem;
+  border: 0;
+}
+
+input[type='text'], #imageSelection {
+  margin-bottom: 0.75rem;
+}
+
+button[type="submit"] {
+  font-weight: 500;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#popupButtons {
+  display: flex;
+  gap: 0.25rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+#popupButtons button {
+  background-color: #f3f4f6;
+  font-size: 1.25rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+#imageSelection {
+  overflow-x: scroll;
+  white-space: nowrap;
+  min-height: 5.125rem;
+}
+
+#imageSelection input[type="radio"] {
+  width: 0;
+  height: 0;
+}
+
+#imageSelection label {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#imageSelection img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border: 2px solid transparent;
+  border-radius: 4px;
+  object-fit: cover;
+  opacity: 0.6;
+  border-radius: 0.25rem;
+}
+
+#imageSelection input[type="radio"]:checked + img {
+  border-color: #000;
+  opacity: 1;
+}
+
+#imageSelection input[type="radio"]:focus-visible + img {
+  border-color: blue;
+}
